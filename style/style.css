@@ -1,0 +1,306 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #2BD39C, #8577B7);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+.card:hover .card__images-img:after {
+  width: 90%;
+  transition: 0.5s;
+}
+
+.card:hover .card__add-to-cart {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: 0.5s;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #2A2B2B;
+  border-radius: 30px;
+}
+.card .BasicInfor {
+  background-color: #f5f5f5;
+  position: relative;
+  border-radius: 30px;
+  padding: 25px;
+}
+.card__title-category, .card__title-infor {
+  font-weight: bold;
+  font-size: x-small;
+}
+.card__title-name {
+  font-weight: bold;
+  font-size: large;
+  padding-bottom: 3px;
+}
+.card__images-img {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.card__images-img:before {
+  content: "";
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: #E7E6E8;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+.card__images-img:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  z-index: -1;
+  height: 3rem;
+  width: 9rem;
+  background-color: black;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.2;
+}
+.card__images-img.card__images-img input {
+  opacity: 0;
+  position: absolute;
+}
+.card__images-img.card__images-img img {
+  transform: scale(1) rotate(25deg);
+  transition: 0.5s;
+  display: none;
+}
+.card__images-img.card__images-img img:hover {
+  transform: scale(1.2) rotate(30deg) translate(10px, -20px);
+}
+.card__images-img.card__images-img input:checked ~ img {
+  display: block;
+}
+.card__color {
+  display: flex;
+}
+.card__color .eclipse--black,
+.card__color .eclipse--green {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.card__color .eclipse--black {
+  background-color: black;
+  margin-left: 10px;
+}
+.card__color .eclipse--green {
+  background-color: #C7DE6F;
+}
+.card__add-to-cart {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  transform: translate(0, 10px);
+}
+.card__add-to-cart i {
+  display: flex;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #2BD39C;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  right: 35%;
+  border: 6px solid #2A2B2B;
+}
+.card__add-to-cart:before {
+  content: "";
+  position: absolute;
+  width: 47px;
+  height: 30px;
+  background-color: red;
+  border-bottom-left-radius: 55%;
+  bottom: 0;
+  background-color: transparent;
+  right: 20.5%;
+  box-shadow: -2px 19px 0 0 #2A2B2B;
+}
+.card__add-to-cart:after {
+  content: "";
+  position: absolute;
+  width: 47px;
+  height: 33px;
+  background-color: red;
+  border-bottom-right-radius: 55%;
+  bottom: 0;
+  background-color: transparent;
+  left: 30%;
+  box-shadow: 1px 20px 0 0 #2A2B2B;
+}
+.card__mores {
+  padding: 25px;
+}
+.card__mores .stars,
+.card__mores .Price {
+  display: inline-block;
+}
+.card__mores .Price {
+  float: right;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color: #eee;
+}
+.card__mores .stars {
+  color: gray;
+  font-weight: 10px;
+}
+.card__mores .stars i:hover {
+  cursor: pointer;
+  color: yellow;
+}
+
+/*# sourceMappingURL=style.css.map */
